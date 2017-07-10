@@ -2,7 +2,7 @@
 #define GAMESERVER_H
 #include <QObject>
 #include <QTcpServer>
-
+#include "serverdb.h"
 
 class GameServer : public QTcpServer
 {
@@ -11,7 +11,7 @@ class GameServer : public QTcpServer
 public:
     GameServer(QObject *parent =0);
     ~GameServer();
-    bool startServer(int portId);
+    void startServer(int portId);
     void clientdisconnect();
 private slots:
     void readyRead();
@@ -20,7 +20,10 @@ protected:
     void incomingConnection(qintptr socketfd);
 
 private:
-    QTcpSocket* client;
+    QList<QTcpSocket*> client_list;
+    ServerDB * serverDB;
+    // methods
+    void client_login(QList<QByteArray> &data);
 };
 
 

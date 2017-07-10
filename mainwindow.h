@@ -14,7 +14,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+    void status_message(QString msg);
 private slots:
 
     void on_start_pushButton_clicked();

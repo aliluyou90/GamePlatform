@@ -25,9 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    gameserver.cpp
+    gameserver.cpp \
+    serverdb.cpp
 
 HEADERS  += mainwindow.h \
-    gameserver.h
+    gameserver.h \
+    serverdb.h
 
 FORMS    += mainwindow.ui
